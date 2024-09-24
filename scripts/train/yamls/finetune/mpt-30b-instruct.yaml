@@ -127,7 +127,7 @@ callbacks:
 # save_interval: 3ep
 # save_num_checkpoints_to_keep: 1
 
-icl_max_seq_len: ${variables.icl_max_seq_len}
+# icl_max_seq_len: ${variables.icl_max_seq_len}
 
 # YOU MUST ADD YOUR OWN DATASET URIs
 # this section can be removed if you do not want to track these metrics
