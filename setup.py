@@ -51,32 +51,32 @@ classifiers = [
     'Programming Language :: Python :: 3.11',
 ]
 
-# install_requires = [
-#     'mosaicml[libcloud,wandb,oci,gcs,mlflow]>=0.24.1,<0.25',
-#     'mlflow>=2.14.1,<2.17',
-#     'accelerate>=0.25,<0.34',  # for HF inference `device_map`
-#     'transformers>=4.43.2,<4.44',
-#     'mosaicml-streaming>=0.8.1,<0.9',
-#     #'torch>=2.4.0,<2.4.1',
-#     'datasets>=2.19,<2.20',
-#     'fsspec==2023.6.0',  # newer version results in a bug in datasets that duplicates data
-#     'sentencepiece==0.2.0',
-#     'einops==0.8.0',
-#     'omegaconf>=2.2.3,<3',
-#     'slack-sdk<4',
-#     'mosaicml-cli>=0.6.10,<1',
-#     'onnx==1.16.2',
-#     'onnxruntime==1.19.0',
-#     'boto3>=1.21.45,<2',
-#     'huggingface-hub>=0.19.0,<0.25',
-#     'beautifulsoup4>=4.12.2,<5',  # required for model download utils
-#     'tenacity>=8.2.3,<10',
-#     'catalogue>=2,<3',
-#     'typer<1',
-#     'GitPython==3.1.43',
-# ]
+install_requires = [
+    'mosaicml[libcloud,wandb,oci,gcs,mlflow]>=0.24.1,<0.25',
+    'mlflow>=2.14.1,<2.17',
+    'accelerate>=0.25,<0.34',  # for HF inference `device_map`
+    'transformers>=4.43.2,<4.44',
+    'mosaicml-streaming>=0.8.1,<0.9',
+    #'torch>=2.4.0,<2.4.1',
+    'datasets>=2.19,<2.20',
+    'fsspec==2023.6.0',  # newer version results in a bug in datasets that duplicates data
+    'sentencepiece==0.2.0',
+    'einops==0.8.0',
+    'omegaconf>=2.2.3,<3',
+    'slack-sdk<4',
+    'mosaicml-cli>=0.6.10,<1',
+    'onnx==1.16.2',
+    'onnxruntime==1.19.0',
+    'boto3>=1.21.45,<2',
+    'huggingface-hub>=0.19.0,<0.25',
+    'beautifulsoup4>=4.12.2,<5',  # required for model download utils
+    'tenacity>=8.2.3,<10',
+    'catalogue>=2,<3',
+    'typer<1',
+    'GitPython==3.1.43',
+]
 
-# extra_deps = {}
+extra_deps = {}
 
 # extra_deps['dev'] = [
 #     'coverage[toml]==7.6.1',
