@@ -56,7 +56,7 @@ install_requires = [
     'accelerate>=0.25,<0.26',  # for HF inference `device_map`
     'transformers>=4.38.2,<4.39',
     'mosaicml-streaming>=0.7.4,<0.8',
-    'torch>=2.2.1,<2.3',
+    #'torch>=2.2.1,<2.3',
     'datasets>=2.16,<2.17',
     'fsspec==2023.6.0',  # newer version results in a bug in datasets that duplicates data
     'sentencepiece==0.1.97',
@@ -76,54 +76,54 @@ install_requires = [
 
 extra_deps = {}
 
-extra_deps['dev'] = [
-    'pre-commit>=3.4.0,<4',
-    'pytest>=7.2.1,<8',
-    'pytest_codeblocks>=0.16.1,<0.17',
-    'pytest-cov>=4,<5',
-    'pyright==1.1.256',
-    'toml>=0.10.2,<0.11',
-    'packaging>=21,<23',
-    'hf_transfer==0.1.3',
-]
+# extra_deps['dev'] = [
+#     'pre-commit>=3.4.0,<4',
+#     'pytest>=7.2.1,<8',
+#     'pytest_codeblocks>=0.16.1,<0.17',
+#     'pytest-cov>=4,<5',
+#     'pyright==1.1.256',
+#     'toml>=0.10.2,<0.11',
+#     'packaging>=21,<23',
+#     'hf_transfer==0.1.3',
+# ]
 
-extra_deps['databricks'] = [
-    'mosaicml[databricks]>=0.21.1,<0.22',
-    'databricks-sql-connector>=3,<4',
-    'databricks-connect==14.1.0',
-    'lz4>=4,<5',
-]
+# extra_deps['databricks'] = [
+#     'mosaicml[databricks]>=0.21.1,<0.22',
+#     'databricks-sql-connector>=3,<4',
+#     'databricks-connect==14.1.0',
+#     'lz4>=4,<5',
+# ]
 
-extra_deps['tensorboard'] = [
-    'mosaicml[tensorboard]>=0.21.1,<0.22',
-]
+# extra_deps['tensorboard'] = [
+#     'mosaicml[tensorboard]>=0.21.1,<0.22',
+# ]
 
-# Flash 2 group kept for backwards compatibility
-extra_deps['gpu-flash2'] = [
-    'flash-attn==2.5.0',
-]
+# # Flash 2 group kept for backwards compatibility
+# extra_deps['gpu-flash2'] = [
+#     'flash-attn==2.5.0',
+# ]
 
-extra_deps['gpu'] = copy.deepcopy(extra_deps['gpu-flash2'])
+# extra_deps['gpu'] = copy.deepcopy(extra_deps['gpu-flash2'])
 
-extra_deps['peft'] = [
-    'mosaicml[peft]>=0.21.1,<0.22',
-]
+# extra_deps['peft'] = [
+#     'mosaicml[peft]>=0.21.1,<0.22',
+# ]
 
-extra_deps['olmo'] = [
-    'ai2-olmo>0.2.4',
-]
+# extra_deps['olmo'] = [
+#     'ai2-olmo>0.2.4',
+# ]
 
-extra_deps['openai'] = [
-    'openai==1.3.8',
-    'tiktoken==0.4.0',
-]
-extra_deps['all-cpu'] = set(
-    dep for key, deps in extra_deps.items() for dep in deps if 'gpu' not in key)
-extra_deps['all'] = set(dep for key, deps in extra_deps.items() for dep in deps
-                        if key not in {'gpu-flash2', 'all-cpu'})
-extra_deps['all-flash2'] = set(dep for key, deps in extra_deps.items()
-                               for dep in deps
-                               if key not in {'gpu', 'all', 'all-cpu'})
+# extra_deps['openai'] = [
+#     'openai==1.3.8',
+#     'tiktoken==0.4.0',
+# ]
+# extra_deps['all-cpu'] = set(
+#     dep for key, deps in extra_deps.items() for dep in deps if 'gpu' not in key)
+# extra_deps['all'] = set(dep for key, deps in extra_deps.items() for dep in deps
+#                         if key not in {'gpu-flash2', 'all-cpu'})
+# extra_deps['all-flash2'] = set(dep for key, deps in extra_deps.items()
+#                                for dep in deps
+#                                if key not in {'gpu', 'all', 'all-cpu'})
 
 setup(
     name=_PACKAGE_NAME,
