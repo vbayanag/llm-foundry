@@ -57,7 +57,7 @@ install_requires = [
     'accelerate>=0.25,<0.34',  # for HF inference `device_map`
     'transformers>=4.43.2,<4.44',
     'mosaicml-streaming>=0.8.1,<0.9',
-    'torch>=2.4.0,<2.4.1',
+    #'torch>=2.4.0,<2.4.1',
     'datasets>=2.19,<2.20',
     'fsspec==2023.6.0',  # newer version results in a bug in datasets that duplicates data
     'sentencepiece==0.2.0',
@@ -102,12 +102,12 @@ extra_deps['tensorboard'] = [
     'mosaicml[tensorboard]>=0.24.1,<0.25',
 ]
 
-# Flash 2 group kept for backwards compatibility
-extra_deps['gpu-flash2'] = [
-    'flash-attn>=2.6.3,<3',
-]
+# # Flash 2 group kept for backwards compatibility
+# extra_deps['gpu-flash2'] = [
+#     'flash-attn>=2.6.3,<3',
+# ]
 
-extra_deps['gpu'] = copy.deepcopy(extra_deps['gpu-flash2'])
+# extra_deps['gpu'] = copy.deepcopy(extra_deps['gpu-flash2'])
 
 extra_deps['peft'] = [
     'mosaicml[peft]>=0.24.1,<0.25',
