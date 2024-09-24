@@ -78,29 +78,29 @@ install_requires = [
 
 extra_deps = {}
 
-# extra_deps['dev'] = [
-#     'coverage[toml]==7.6.1',
-#     'pre-commit>=3.4.0,<4',
-#     'pytest>=7.2.1,<9',
-#     'pytest_codeblocks>=0.16.1,<0.18',
-#     'pytest-cov>=4,<6',
-#     'pyright==1.1.256',
-#     'toml>=0.10.2,<0.11',
-#     'packaging>=21,<25',
-#     'hf_transfer==0.1.8',
-# ]
+extra_deps['dev'] = [
+    'coverage[toml]==7.6.1',
+    'pre-commit>=3.4.0,<4',
+    'pytest>=7.2.1,<9',
+    'pytest_codeblocks>=0.16.1,<0.18',
+    'pytest-cov>=4,<6',
+    'pyright==1.1.256',
+    'toml>=0.10.2,<0.11',
+    'packaging>=21,<25',
+    'hf_transfer==0.1.8',
+]
 
-# extra_deps['databricks'] = [
-#     'mosaicml[databricks]>=0.24.1,<0.25',
-#     'numpy<2',
-#     'databricks-sql-connector>=3,<4',
-#     'databricks-connect==14.1.0',
-#     'lz4>=4,<5',
-# ]
+extra_deps['databricks'] = [
+    'mosaicml[databricks]>=0.24.1,<0.25',
+    'numpy<2',
+    'databricks-sql-connector>=3,<4',
+    'databricks-connect==14.1.0',
+    'lz4>=4,<5',
+]
 
-# extra_deps['tensorboard'] = [
-#     'mosaicml[tensorboard]>=0.24.1,<0.25',
-# ]
+extra_deps['tensorboard'] = [
+    'mosaicml[tensorboard]>=0.24.1,<0.25',
+]
 
 # # # Flash 2 group kept for backwards compatibility
 # # extra_deps['gpu-flash2'] = [
@@ -109,37 +109,37 @@ extra_deps = {}
 
 # # extra_deps['gpu'] = copy.deepcopy(extra_deps['gpu-flash2'])
 
-# extra_deps['peft'] = [
-#     'mosaicml[peft]>=0.24.1,<0.25',
-# ]
+extra_deps['peft'] = [
+    'mosaicml[peft]>=0.24.1,<0.25',
+]
 
-# extra_deps['openai'] = [
-#     'openai==1.3.8',
-#     'tiktoken==0.4.0',
-# ]
+extra_deps['openai'] = [
+    'openai==1.3.8',
+    'tiktoken==0.4.0',
+]
 
-# extra_deps['megablocks'] = [
-#     'megablocks==0.6.1',
-#     'grouped-gemm==0.1.6',
-# ]
+extra_deps['megablocks'] = [
+    'megablocks==0.6.1',
+    'grouped-gemm==0.1.6',
+]
 
-# extra_deps['databricks-serverless'] = {
-#     dep for key, deps in extra_deps.items() for dep in deps
-#     if 'gpu' not in key and 'megablocks' not in key and
-#     'databricks-connect' not in dep
-# }
-# extra_deps['all-cpu'] = {
-#     dep for key, deps in extra_deps.items() for dep in deps
-#     if 'gpu' not in key and 'megablocks' not in key
-# }
-# extra_deps['all'] = {
-#     dep for key, deps in extra_deps.items() for dep in deps
-#     if key not in {'gpu-flash2', 'all-cpu'}
-# }
-# extra_deps['all-flash2'] = {
-#     dep for key, deps in extra_deps.items() for dep in deps
-#     if key not in {'gpu', 'all', 'all-cpu'}
-# }
+extra_deps['databricks-serverless'] = {
+    dep for key, deps in extra_deps.items() for dep in deps
+    if 'gpu' not in key and 'megablocks' not in key and
+    'databricks-connect' not in dep
+}
+extra_deps['all-cpu'] = {
+    dep for key, deps in extra_deps.items() for dep in deps
+    if 'gpu' not in key and 'megablocks' not in key
+}
+extra_deps['all'] = {
+    dep for key, deps in extra_deps.items() for dep in deps
+    if key not in {'gpu-flash2', 'all-cpu'}
+}
+extra_deps['all-flash2'] = {
+    dep for key, deps in extra_deps.items() for dep in deps
+    if key not in {'gpu', 'all', 'all-cpu'}
+}
 
 setup(
     name=_PACKAGE_NAME,
